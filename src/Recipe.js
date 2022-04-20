@@ -1,6 +1,6 @@
 import React from "react";
 
-function Recipe() {
+function Recipe({ deleteRecipe }) {
 
 }
 
