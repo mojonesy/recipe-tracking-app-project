@@ -65,6 +65,7 @@ function RecipeCreate({ createRecipe }) {
                 rows={2}
                 onChange={handleChange}
                 value={formData.ingredients}
+                style={{fontFamily:"sans-serif"}}
               />
             </td>
             <td>
@@ -75,6 +76,7 @@ function RecipeCreate({ createRecipe }) {
                 rows={2}
                 onChange={handleChange}
                 value={formData.preparation}
+                style={{fontFamily:"sans-serif"}}
               />
             </td>
             <td>
