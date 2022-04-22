@@ -111,7 +111,7 @@ describe("App", () => {
     });
     
     test("the photo", () => {
-      expect(screen.getAllByRole('img')[2]).toHaveAttribute('src', 'http://www.nopicavailable.com');
+      expect(screen.getAllByRole('img')[0]).toHaveAttribute('src', 'http://www.nopicavailable.com');
     });
     
     test("the ingredients", () => {
