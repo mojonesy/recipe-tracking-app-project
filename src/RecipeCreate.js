@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
+
 function RecipeCreate({ createRecipe }) {
+  // Initial empty form //
   const initialFormState = {
     name: "",
     cuisine: "",
@@ -8,19 +10,22 @@ function RecipeCreate({ createRecipe }) {
     ingredients: "",
     preparation: "",
   };
+
+  // useState() initially sets formData as initialFormState //
   const [formData, setFormData] = useState({...initialFormState});
 
+  // formData change handler //
   const handleChange = ({ target }) => {
       setFormData({ ...formData, [target.name]: target.value });
   };
+
+  // Submit button handler - create new recipe & clear formData //
   const handleSubmit = (event) => {
     event.preventDefault();
-    createRecipe(formData);
-    setFormData({...initialFormState});
+      createRecipe(formData);
+      setFormData({...initialFormState});
   };
-  // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
-  // TODO: Add the required input and textarea form elements.
-  // TODO: Add the required submit and change handlers
+
   
   return (
     <form name="create" onSubmit={handleSubmit}>
@@ -33,6 +38,7 @@ function RecipeCreate({ createRecipe }) {
                 type="text" 
                 name="name"
                 placeholder="Name"
+                required={true}
                 onChange={handleChange}
                 value={formData.name}
               />
@@ -63,6 +69,7 @@ function RecipeCreate({ createRecipe }) {
                 name="ingredients"
                 placeholder="Ingredients"
                 rows={2}
+                required={true}
                 onChange={handleChange}
                 value={formData.ingredients}
                 style={{fontFamily:"sans-serif"}}
