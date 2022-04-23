@@ -9,7 +9,7 @@ function App() {
 
   // Add new recipe to current recipe list //
   const createRecipe = (newRecipe) =>
-    setRecipes((currentRecipes) => [newRecipe, ...currentRecipes]);
+    setRecipes((currentRecipes) => [...currentRecipes, newRecipe]);
     
   // Remove recipe to delete from current recipe list //
   const deleteRecipe = (indexToDelete) =>
